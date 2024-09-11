@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Capital O 75243 metro international",
+        "facility" : "Parking, Reception, Free Wifi",
+        "imageUrls": [
+        "https://images.oyoroomscdn.com/uploads/hotel_image/56303/medium/597f0e48823f8885.jpg",
+        "https://images.oyoroomscdn.com/uploads/hotel_image/56303/medium/06883e94ec59702e.jpg",
+        "https://images.oyoroomscdn.com/uploads/hotel_image/56303/medium/91dead74a5dffa61.jpg"  
+        ],
+        "rentperday": 1500,
+        "type": "Delux",
+        "maxcount" : 3,
+        "phonenumber" : 9989649278,
+        "currentbookings": [
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
+    },
+    {
+        "name": "OYO flagship 75243 Metro international",
+        "facility" : "Parking, Reception, Free Wifi",
+        "imageUrls": [
+        "https://images.oyoroomscdn.com/uploads/hotel_image/105649/large/8e80e24a5496eb80.jpg",
+        "https://images.oyoroomscdn.com/uploads/hotel_image/105649/large/caef038a4b97b589.jpg",
+        "https://images.oyoroomscdn.com/uploads/hotel_image/105649/large/46bffe91d06dcb96.jpg"  
+        ],
+        "rentperday": 1500,
+        "type": "Delux",
+        "maxcount" : 3,
+        "phonenumber" : 9989649278,
+        "currentbookings": [
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
+    },
+    {
+        "name": "OYO flagship 76687 Ramoji kothapet",
+        "facility" : "Parking, Reception, Free Wifi",
+        "imageUrls": [
+        "https://images.oyoroomscdn.com/uploads/hotel_image/107625/large/4488071a59d38cc5.jpg",
+        "https://images.oyoroomscdn.com/uploads/hotel_image/107625/large/d452b4897a767f6b.jpg",
+        "https://images.oyoroomscdn.com/uploads/hotel_image/107625/large/8f690e54761344e0.jpg"  
+        ],
+        "rentperday": 2000,
+        "type": "Non-Delux",
+        "maxcount" : 4,
+        "phonenumber" : 9989649278,
+        "currentbookings": [
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
+    },
+    {
+        "name": "OYO 80211 Collection O sri navya Grand",
+        "facility" : "Parking, Reception, Free Wifi",
+        "imageUrls": [
+        "https://images.oyoroomscdn.com/uploads/hotel_image/111796/large/e225bbf160a11c02.jpg",
+        "https://images.oyoroomscdn.com/uploads/hotel_image/111796/large/d55361043c9b52af.jpg",
+        "https://images.oyoroomscdn.com/uploads/hotel_image/111796/large/2f7029d3c5429b5f.jpg"  
+        ],
+        "rentperday": 1600,
+        "type": "Non-Delux",
+        "maxcount" : 4,
+        "phonenumber" : 9989649278,
+        "currentbookings": [
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
+    },
+    {
+        "name": "SPOT ON 37669 Hotel Shiva Sai Lodge Near...",
+        "facility" : "Parking, Reception, Free Wifi",
+        "imageUrls": [
+        "https://images.oyoroomscdn.com/uploads/hotel_image/111796/large/d55361043c9b52af.jpg",
+        "https://images.oyoroomscdn.com/uploads/hotel_image/56303/large/06883e94ec59702e.jpg",
+        "https://images.oyoroomscdn.com/uploads/hotel_image/56303/large/91.jpg"  
+        ],
+        "rentperday": 1600,
+        "type": "Non-Delux",
+        "maxcount" : 4,
+        "phonenumber" : 9989649278,
+        "currentbookings": [
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
+    }
+]

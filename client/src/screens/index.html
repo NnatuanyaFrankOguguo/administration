@@ -1,0 +1,25 @@
+if(room.currentbookings.length > 0){    
+    // iterating through the currentbookings in the particular room that the bookings is made if its more than one
+    for (const booking of room.currentbookings) {
+        if (
+            !moment(dates[0].$d).isBetween(booking.fromdate, booking.todate, undefined, '[]') && 
+            !moment(dates[1].$d).isBetween(booking.fromdate, booking.todate, undefined, '[]')) {
+            if(moment(dates[0].$d).format('DD-MM-YYYY')!== booking.fromdate
+                && moment(dates[0].$d).format('DD-MM-YYYY')!== booking.todate
+                && moment(dates[1].$d).format('DD-MM-YYYY')!== booking.fromdate
+                && moment(dates[1].$d).format('DD-MM-YYYY')!== booking.todate) { 
+
+                availability = true
+            }
+        }
+    }
+    
+}
+
+if(availability == true || room.currentbookings.length == 0){
+
+    temprooms.push(room);
+}
+
+setRooms(temprooms)
+}
