@@ -150,7 +150,7 @@ router.post('/forgotpassword', async(req,res) => {
             to: `${user.email}`,
             subject: 'Reset Your Password',
             text: ` Hello, \n please the link below to reset your password: \n
-            http://localhost:3000/resetpassword/${user._id}/${token} \n
+            https://administration-frontend.onrender.com/resetpassword/${user._id}/${token} \n
             link expires in a minute `
         };
           
