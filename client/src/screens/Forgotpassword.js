@@ -6,6 +6,7 @@ import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Success from "../components/Success";
 
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL
 function Forgotpassword() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState();
@@ -39,7 +40,7 @@ function Forgotpassword() {
         try {
             /* before the API request is processed set loading should be true more info in my note #17*/
             setLoading(true);
-            const response = (await axios.post('/api/users/forgotpassword', {email})).data /*we are sending the user object as our data */       
+            const response = (await axios.post(`${apiBaseUrl}/api/users/forgotpassword`, {email})).data /*we are sending the user object as our data */       
             setLoading(false)
             setSuccess(true)
 

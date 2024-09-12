@@ -4,10 +4,18 @@ const express = require("express");
 
 const app = express();
 
+const cors = require('cors');
+
 const path = require('path');
 
 
 // loading the environment of variables of .env using the dotenv package
+app.use(cors({ 
+    origin: 'https://administration-frontend.onrender.com',  // Allow requests only from your frontend's URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Ensure POST is included here the kind requests being made
+    credentials: true  // Enable this if you are sending cookies or other credentials
+}));
+
 
 
 // first import) importing the mongodb.js 

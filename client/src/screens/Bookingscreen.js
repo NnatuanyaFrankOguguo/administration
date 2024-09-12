@@ -8,7 +8,7 @@ import { PaystackButton } from 'react-paystack';
 import Swal from 'sweetalert2';
 
 
-
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL
 function Bookingscreen() {
     const[loading, setLoading] = useState(true);
     const[room, setRoom] = useState();
@@ -62,7 +62,7 @@ function Bookingscreen() {
             // adding the loading icon whenever the request is processing #25
             setLoading(true);
 
-            const response = await axios.post('/api/bookings/bookroom', bookingDetails) /*going to create the Url in the booking route and add it server.js to receive the response(after much time we are done,
+            const response = await axios.post(`${apiBaseUrl}/api/bookings/bookroom`, bookingDetails) /*going to create the Url in the booking route and add it server.js to receive the response(after much time we are done,
             now to process the request in the frontend sending the bookingDetails as our object (#22)- along  with the booking details we will send our reference) */
             setLoading(false);
             Swal.fire({
@@ -98,7 +98,7 @@ function Bookingscreen() {
             try {
                 setLoading(true);
 
-                const response = await axios.post('/api/rooms/getroombyid', {roomid})
+                const response = await axios.post(`${apiBaseUrl}/api/rooms/getroombyid`, {roomid})
                 setRoom(response.data.room);
                 settotalamount(totaldays * response.data.room.rentperday)
 

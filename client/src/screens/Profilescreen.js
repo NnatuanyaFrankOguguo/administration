@@ -7,6 +7,7 @@ import Error from '../components/Error';
 import Swal from 'sweetalert2';
 import { Divider, Flex, Tag } from 'antd';
 
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL
 function Profilescreen() {
 
     const user = JSON.parse(localStorage.getItem('currentuser'))
@@ -70,7 +71,7 @@ export function MyBookings() {
         const fetchdata = async () => {
             try {
                 setLoading(true)
-                const roomdata = await axios.post('/api/bookings/getbookingsbyuserid', {userid : user._id}) /*we pass the userid as the parameter */
+                const roomdata = await axios.post(`${apiBaseUrl}/api/bookings/getbookingsbyuserid`, {userid : user._id}) /*we pass the userid as the parameter */
                 // console.log(roomdata.data)
                 setbookings(roomdata.data)
                 setLoading(false)
@@ -94,7 +95,7 @@ export function MyBookings() {
             onOk: async() => {
                 try {
                     setLoading(true)
-                    const response = await (await axios.post('/api/bookings/cancelbooking', {bookingid, roomid})).data
+                    const response = await (await axios.post(`${apiBaseUrl}/api/bookings/cancelbooking`, {bookingid, roomid})).data
                     console.log(response)
                     setLoading(false)
                     Swal.fire({

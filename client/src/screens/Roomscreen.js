@@ -10,6 +10,7 @@ import moment from 'moment'
 import { DatePicker, Space } from 'antd';
 const { RangePicker } = DatePicker;
 
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL
 function Roomscreen() {
 
 	// performing the API OPERATIONS(when performing the API OPERATIONS in frontend or backend)
@@ -47,7 +48,7 @@ function Roomscreen() {
 				setLoading(
 					true
 				); /*before the API request as eplained in the note */
-				const response = await axios.get("/api/rooms/getallrooms"); /*passing the API ENDPOINT and wrappig it in the data object */
+				const response = await axios.get(`${apiBaseUrl}/api/rooms/getallrooms`); /*passing the API ENDPOINT and wrappig it in the data object */
 				// console.log(response) instead of printing the response in the console we are updating the state
 				setRooms(response.data);
                 setduplicaterooms(response.data);

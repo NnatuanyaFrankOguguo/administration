@@ -7,6 +7,8 @@ import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Success from "../components/Success";
 
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL
+console.log('API Base URL:', apiBaseUrl);
 function Signupscreen() {
     const [loading, setLoading] = useState(false);
 	const [error, setError] = useState();
@@ -66,7 +68,7 @@ function Signupscreen() {
         //performing the API operation, make the function async first before we start( this is like the last step after all the user model and route has been made that we put the asyn behind the function)
         try {
             setLoading(true);
-            const response = (await axios.post('/api/users/signup', user)).data /*we are sending the user object as our data */
+            const response = (await axios.post(`${apiBaseUrl}/api/users/signup`, user)).data /*we are sending the user object as our data */
             setLoading(false)
             setSuccess(true)
             localStorage.setItem('currentuser', JSON.stringify(

@@ -6,7 +6,7 @@ import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Success from "../components/Success";
 
-
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL
 function Loginscreen() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState();
@@ -56,7 +56,7 @@ function Loginscreen() {
             try {
                 /* before the API request is processed set loading should be true more info in my note #17*/
                 setLoading(true);
-                const response = (await axios.post('/api/users/login', user)).data /*we are sending the user object as our data */       
+                const response = (await axios.post(`${apiBaseUrl}/api/users/login`, user)).data /*we are sending the user object as our data */       
                 setLoading(false)
                 setSuccess(true)
                 /* after the API request is processed we will now navigate the user to the homepage 

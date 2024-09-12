@@ -7,7 +7,7 @@ import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Success from "../components/Success";
 
-
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL
 function Resetpassword() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState();
@@ -64,7 +64,7 @@ function Resetpassword() {
         try {
             /* before the API request is processed set loading should be true more info in my note #17*/
             setLoading(true);
-            const response = (await axios.post('/api/users/resetpassword', user)).data /*we are sending the user object as our data and ALSO ADDING THE TOKEN AND USEID IN THE API TO THE BACKEND(but we can still put the userid and token in the user object too) */       
+            const response = (await axios.post(`${apiBaseUrl}/api/users/resetpassword`, user)).data /*we are sending the user object as our data and ALSO ADDING THE TOKEN AND USEID IN THE API TO THE BACKEND(but we can still put the userid and token in the user object too) */       
             setLoading(false)
             setSuccess(true)
             /* after the API request is processed we will now navigate the user to the homepage 

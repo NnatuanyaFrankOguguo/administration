@@ -11,7 +11,7 @@ const nodemailer = require('nodemailer')
 
 /*writing the generate token function */
 const generateToken = (id) => {
-    return jwt.sign({id}, process.env.JWT_SECRET, { expiresIn: '2d'}); /*the id is the payload(user data(which is the user._id to generate the token)) */
+    return jwt.sign({id}, process.env.JWT_SECRET, { expiresIn: '2m'}); /*the id is the payload(user data(which is the user._id to generate the token)) */
 };
 
 router.post('/signup', async(req, res) => {
@@ -59,7 +59,8 @@ router.post('/signup', async(req, res) => {
         res.status(201).json( /*SENDING THE SAVED USER RESULT BACK TO THE FRONTEND THAT MADE THE API REQUEST IN THE SIGNUPSCREEN */
             userData )
         } else {
-            return res.status(400).json('Signin failed due to email already in use')
+            console.error("sign up", error.message)
+            return res.status(400).json({ error: 'Payment verification failed', details: error.message });
         }
        
         
@@ -134,7 +135,7 @@ router.post('/forgotpassword', async(req,res) => {
         }
         // If user exists, return a success message (or trigger an action like sending a reset link)
         // You can integrate a real password reset functionality here
-        const token = jwt.sign({id: user._id}, process.env.JWT_SECRET, { expiresIn: '2d'});
+        const token = jwt.sign({id: user._id}, process.env.JWT_SECRET, { expiresIn: '2m'});
         // sending email the token as link to the user mail to access it for reset of password
         var transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -184,7 +185,7 @@ router.post('/resetpassword', async(req, res) => {
         /*if there is no error(token is valid) we will first of all hash our password bcos we stored our hash password inside the database // Hash the password before saving*/
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt)
-        const savedPassword = await User.findByIdAndUpdate({_id : userid}, {password : hashedPassword}, { new: true }) // This option returns the updated document /*querying the data to find the userby id and update the password */
+        const updatedUser = await User.findByIdAndUpdate({_id : userid}, {password : hashedPassword}, { new: true }) // This option returns the updated document /*querying the data to find the userby id and update the password */
 
         // If the user was updated successfully, send a success response
         if (updatedUser) {

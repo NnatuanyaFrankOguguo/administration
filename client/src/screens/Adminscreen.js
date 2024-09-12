@@ -7,7 +7,7 @@ import axios from 'axios';
 import { Color } from 'antd/es/color-picker';
 import Swal from 'sweetalert2';
 
-
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 function Adminscreen() {
 
     useEffect(() => { /*if user is not an admin an tries to get into the admin will be navigated to the homepage(i fit change the admin path to something else not necesarilly the admin keyword ) */
@@ -73,7 +73,7 @@ export function Bookings(){
             
             try {
                 setLoading(true)
-                const response = await axios.get('api/bookings/getallbookings') /*get request to collect data from the backend */
+                const response = await axios.get(`${apiBaseUrl}/api/bookings/getallbookings`) /*get request to collect data from the backend */
                 setbookings(response.data)
                 setLoading(false)
             } catch (error) {
@@ -147,7 +147,7 @@ export function Rooms(){
             
             try {
                 setLoading(true)
-                const response = await axios.get('api/rooms/getallrooms') /*get request to collect data from the backend(already
+                const response = await axios.get(`${apiBaseUrl}/api/rooms/getallrooms`) /*get request to collect data from the backend(already
                  we have created this API in roomscreen so we are going to use it) */
                 setrooms(response.data)
                 setLoading(false)
@@ -221,7 +221,7 @@ export function Users() {
             
             try {
                 setLoading(true)
-                const response = await axios.get('api/users/getallusers') /*get request to collect data from the backend(already
+                const response = await axios.get(`${apiBaseUrl}/api/users/getallusers`) /*get request to collect data from the backend(already
                  we have created this API in roomscreen so we are going to use it) */
                 setusers(response.data)
                 setLoading(false)
@@ -319,7 +319,7 @@ export function Addroom() {
 
         try {
             setLoading(true)
-            const response = (await axios.post('api/rooms/addroom', newroom)).data /* send the newroom object as the data to the backend */
+            const response = (await axios.post(`${apiBaseUrl}/api/rooms/addroom`, newroom)).data /* send the newroom object as the data to the backend */
             console.log(response)
             setLoading(false)
             Swal.fire({
