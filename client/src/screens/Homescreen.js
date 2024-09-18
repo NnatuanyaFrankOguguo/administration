@@ -145,7 +145,7 @@ function Homescreen() {
             </div>
 
              {/*ABOUT SECTION this about section will have two column left column will add the image and playicon in the right column we will add description about the hotel */}
-            <div className={styles.about}>   
+            <div className={styles.about} id='about'>   
                 <div className={styles.aboutLeft}>
                     <img src={about} alt='' className={styles.aboutImg}/>
                     <img src={play_icon} alt='' className={styles.playIcon} onClick={()=>{setplaystate(true)}}/>

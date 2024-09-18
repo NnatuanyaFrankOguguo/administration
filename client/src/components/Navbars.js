@@ -72,10 +72,10 @@ const iconStyle = {
                     <Link class="nav-link" to="/home">Home <span class="sr-only">(current)</span></Link>
                 </li>
                 <li class="nav-item mr-4">
-                    <Link class="nav-link" to="/about">About Us</Link>
+                    <a class="nav-link" href="#about">About Us</a>
                 </li>
                 <li class="nav-item mr-4">
-                    <Link class="nav-link" to="/contact">Contact </Link>
+                    <a class="nav-link" href="#con">Contact </a>
                 </li>
                 <li class="nav-item mr-5">
                     <Link class="nav-link" to="/rooms">Rooms</Link>
