@@ -6,6 +6,8 @@ import * as Yup from 'yup';
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Success from "../components/Success";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesome component
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const apiBaseUrl = process.env.REACT_APP_API_BASE_URL
 console.log('API Base URL:', apiBaseUrl);
@@ -19,6 +21,8 @@ function Signupscreen() {
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
     const [cpassword, setcpassword] = useState('')
+
+    const [visible, setvisible] = useState(false)
 
     // creating a YUP validation schema 
     const signupSchema = Yup.object().shape({
@@ -125,10 +129,11 @@ function Signupscreen() {
                             {formerror.email && <div className='errorcode'>{formerror.email}</div>}
                         </div>
                         
-                        <div>
-                            <input type="password" className='form-control' placeholder='password'
+                        <div className='seen'>
+                            <input type={visible ? 'text' : 'password'} className='form-control' placeholder='password'
                             value={password} onChange={(e) => {setpassword(e.target.value) }} />
                             {formerror.password && <div className='errorcode'>{formerror.password}</div>}
+                            <span id='span1' onClick={()=> {setvisible( visibility => !visibility)}}><FontAwesomeIcon style={{fontSize : '14px', cursor: 'pointer'}} icon={ visible ? faEye : faEyeSlash} /></span>
                         </div>
 
                         <div>

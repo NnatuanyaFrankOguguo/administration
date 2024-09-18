@@ -5,6 +5,8 @@ import * as Yup from 'yup';
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Success from "../components/Success";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesome component
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const apiBaseUrl = process.env.REACT_APP_API_BASE_URL
 function Loginscreen() {
@@ -17,6 +19,8 @@ function Loginscreen() {
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
     const [formerror, setformerror] = useState({})
+
+    const [visible, setvisible] = useState(false)
 
     const loginSchema = Yup.object().shape({
         email: Yup.string().email('Invalid Email Format').required('Email is required'),
@@ -100,11 +104,11 @@ function Loginscreen() {
                             value={email} onChange={(e) => {setemail(e.target.value) }}/>
                             {formerror.email && <div className='errorcode'>{formerror.email}</div>}
                         </div>
-                        <div>
-                            <input type="password" className='form-control' placeholder='password'
+                        <div className='seen2'>
+                            <input type={visible ? 'text' : 'password'}  className='form-control' placeholder='password'
                             value={password} onChange={(e) => {setpassword(e.target.value) }}/>
                             {formerror.password && <div className='errorcode'>{formerror.password}</div>}
-                        </div>
+                            <span className='span3' onClick={()=> {setvisible( visibility => !visibility)}}><FontAwesomeIcon style={{fontSize : '14px', cursor: 'pointer'}} icon={ visible ? faEye : faEyeSlash} /></span>                        </div>
 
                         <div className='mr-3' style={{display: 'flex', justifyContent: 'space-between'}}>
                             <a href='/signup'><p>Need an Account? Sign Up</p></a>

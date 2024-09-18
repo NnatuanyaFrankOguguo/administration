@@ -308,3 +308,25 @@ p{
     font-size: 12px;
     
 }
+
+.form-link .seen{
+    position: relative;
+}
+
+.form-link #span1{
+    position: absolute;
+    z-index: 1;
+    bottom: 7px;
+    right: 25px
+}
+
+.form-link .seen2{
+    position: relative;
+}
+
+.form-link .span3{
+    position: absolute;
+    z-index: 1;
+    bottom: 7px;
+    right: 25px
+}
