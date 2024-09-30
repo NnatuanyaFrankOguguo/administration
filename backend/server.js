@@ -47,7 +47,7 @@ app.use('/api/users', userRoute) /*the API ENDPOINT NAME ('/api/users')... SO IF
 app.use('/api/bookings', bookingsRoute) /*NOW LISTEN I JUST DISCOVER SOMETHING HERE #20 THIS API ENDPOINT /api/bookings or users or rooms WILL ADDED IN THE FRONTEND WHEN MAKING THE REQUEST
  THAT WHEN ITS BEING DIRECTED T0 THIS SERVER.JS THE SERVER.JS WILL TAKE IT TO IT'S SECOND PARAMETER WHICH IS THE bookingsRoute THAT IT HAS IMPORTED FROM THE ROUTES FOLDER AND THEN IN THE 
  bookingsroute IT WILL NOW USE THE ENDPOINT THERE /bookroom SO FOR A SUCCESSFULL API OPERATION IN FRONTEND AND BACKEND TO HAPPEN IT NEEDS TWO THINGS IN THE API REQUEST
- 1) THE API NAME IN THE SERVER.JS AND AFTER THAT, ENDPOINT IN THE ROUTES FILE  */
+ 1) THE API ENDPOINT IN THE SERVER.JS AND AFTER THAT, APINAME IN THE ROUTES FILE  */
 
 // we have successfully created our first API endpoint which FETCHES all the rooms in our database
 // so to check we can use the postman or we can directly use the google chrome browser only 

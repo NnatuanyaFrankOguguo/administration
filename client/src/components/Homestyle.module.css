@@ -109,6 +109,21 @@
     font-weight: 600;
 }
 
+@media (max-width: 650px){
+    .hotels{
+        flex-direction: column;
+        /* gap: 20px */
+        box-shadow: none;
+    }
+    .hotel{
+        flex-basis: 100%;
+        margin: 20px;
+    }
+    .hotel img{
+        
+    }
+}
+
 /*ABOUT STYLING*/
 .about{
     margin: 100px auto;
@@ -171,6 +186,24 @@
     margin-bottom: 15px;
 }
 
+@media (max-width:800px) {
+    .about{
+        flex-direction: column;
+    }
+    .about .aboutImg{
+        width: 370px;
+        
+    }
+    .aboutLeft{
+        flex-basis: 100%;
+        margin: 20px;
+        order: 2;
+    }
+    .aboutRight{
+        flex-basis: 100%;
+    }
+}
+
 /*NOW FOR THE BRANCHES EDITING*/
 
 .branches{
@@ -192,6 +225,16 @@
     height: 17rem;
 
 
+}
+
+@media (max-width: 800px){
+    .gallery{
+        flex-wrap: wrap;
+    }
+    .gallery img{
+        width: 48%;
+        margin-bottom: 25px;
+    }
 }
 
 /*TESTIMONIAL STYLING---------------------------------------------------------------------*/
@@ -280,6 +323,45 @@
     font-size: 15px;
 }
 
+@media (max-width:800px){
+    .testimonials{
+        padding: 0 40px
+    }
+    .nextBtn, .backBtn{
+        padding: 10px;
+        width: 45px;
+    }
+    .nextBtn:hover, .backBtn:hover{
+        width: 30px
+    }
+    
+    .testimonials ul li{
+        padding: 10px;
+    }
+
+    .slide{
+        padding: 10px;
+    }
+    
+    .slide img{
+        width: 50px;
+        border: 3px solid bisque;
+    }
+}
+
+@media (max-width:600px){
+    .userInfo{
+        display: block;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    .slider p{
+        font-size: 10px;
+    }
+
+}
+
 /*Styling the CONTACT SECTION*/
 .contact{
     margin: 70px auto;
@@ -351,6 +433,15 @@
     font-size: 13px;
 }
 
+@media (max-width:700px){
+    .contact{
+        display: block;
+    }
+    .contactCol{
+        padding: 20px;
+    }
+}
+
 .videoPlayer{
     position : fixed;
     top: 0;
@@ -394,4 +485,18 @@
     list-style: none;
     display: inline-block;
     margin-left: 20px;
+}
+
+@media (max-width:600px){
+    .footer{
+        display: block;
+        text-align: center;
+    }
+    .footer ul li{
+        margin: 10px;
+
+    }
+    .footer ul{
+        margin-top: 10px;
+    }
 }
